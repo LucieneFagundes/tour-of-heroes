@@ -9,8 +9,12 @@
     <button mat-raised-button color="warn" (click)="messageService.clear()">
       Clear messages
     </button>
-    <div *ngFor="let message of messageService.getMessages()">
-      {{ message }}
-    </div>
+
+    <mat-list>
+      <mat-list-item *ngFor="let message of messageService.getMessages()">
+        {{ message }}
+      </mat-list-item>
+    </mat-list>
+
   </mat-expansion-panel>
 </mat-accordion>
