@@ -1,26 +1,38 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Injectable } from '@angular/core';
-import { HEROES } from './mock-heroes';
 import { Hero } from '../models/hero.model';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { MessageService } from './message.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeroService {
-  constructor(private messageService: MessageService) {}
+  private heroesUrl = `${environment.baseUrl}/heroes`;
+
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService
+  ) {}
 
   getHeroes(): Observable<Hero[]> {
-    const heroes = of(HEROES);
-    this.messageService.add(`HeroService: fetched heroes`)
-    return heroes;
+    return this.http
+      .get<Hero[]>(this.heroesUrl)
+      .pipe(tap((heroes) => this.log(`fetched ${heroes.length} heroes`)));
   }
 
   getHero(id: number): Observable<Hero | undefined> {
-    const hero = HEROES.find((hero) => hero.id === id);
-    this.messageService.add(`HeroService: fetched hero id = ${hero?.id}`)
+    return this.http
+      .get<Hero>(`${this.heroesUrl}/${id}`)
+      .pipe(
+        tap((hero) =>
+          this.log(`fetched hero id = ${hero?.id} and name = ${hero?.name}`)
+        )
+      );
+  }
 
-    return of(hero);
+  private log(message: string): void {
+    this.messageService.add(`HeroService: ${message}`);
   }
 }
