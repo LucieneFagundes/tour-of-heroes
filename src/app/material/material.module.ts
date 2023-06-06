@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const MODULES = [
   MatButtonModule,
@@ -19,6 +20,7 @@ const MODULES = [
   MatInputModule,
   MatListModule,
   MatProgressSpinnerModule,
+  MatSnackBarModule,
   MatTableModule,
   MatToolbarModule,
   MatTooltipModule,
