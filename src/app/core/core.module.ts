@@ -11,8 +11,10 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 const COMPONENTS = [
+  ConfirmDialogComponent,
   LoadingComponent,
   MessagesComponent,
   PageNotFoundComponent,
