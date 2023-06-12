@@ -13,6 +13,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatMenuModule } from '@angular/material/menu';
 
 const MODULES = [
   MatAutocompleteModule,
@@ -23,6 +24,7 @@ const MODULES = [
   MatIconModule,
   MatInputModule,
   MatListModule,
+  MatMenuModule,
   MatProgressSpinnerModule,
   MatSnackBarModule,
   MatTableModule,

@@ -1,4 +1,9 @@
-<app-toolbar [title]="title" [menuItems]="menuItems"></app-toolbar>
+<app-toolbar
+  [title]="title"
+  [menuItems]="menuItems"
+  [isLoggedIn]="isLoggedIn$ | async"
+  (logout)="onLogout()"
+></app-toolbar>
 
 <div class="content" fxLayoutGap="12px">
   <app-loading></app-loading>
