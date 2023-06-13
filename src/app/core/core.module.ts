@@ -26,7 +26,7 @@ const MODULES = [FlexLayoutModule, MaterialModule];
 @NgModule({
   declarations: [COMPONENTS],
   imports: [CommonModule, RouterModule, MODULES],
-  exports: [COMPONENTS, MODULES],
+  exports: [COMPONENTS],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
