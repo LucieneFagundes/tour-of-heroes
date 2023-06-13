@@ -14,21 +14,14 @@ export class LoginComponent {
   ) {}
 
   form = this.formBuilder.group({
-    email: [
-      { value: 'jdoe@example.com', disabled: true },
-      [Validators.email, Validators.required],
-    ],
-    password: ['123456', [Validators.required, Validators.minLength(10)]],
+    email: ['jdoe@example.com', [Validators.email, Validators.required]],
+    password: ['', [Validators.required, Validators.minLength(10)]],
   });
 
   onSubmit(): void {
+    console.log(this.form.value);
     if (this.form.valid) {
-
-      const email = this.form.value.email;
-      const password = this.form.value.password;
-
-      this.authService.login({email, password});
+      this.authService.login(this.form.value);
     }
-
   }
 }

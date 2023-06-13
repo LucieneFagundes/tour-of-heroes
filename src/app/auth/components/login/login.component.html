@@ -23,9 +23,16 @@
             required
             type="password"
           />
-          <!-- <mat-hint>
+          <mat-hint>
             CAUTION: Do not reuse any of your existing password
-          </mat-hint> -->
+          </mat-hint>
+
+          <mat-error *ngIf="form.controls['password'].hasError('required')"
+            >Password is required</mat-error
+          >
+          <mat-error *ngIf="form.controls['password'].hasError('minlength')"
+            >Password should contain at least 10 caracters.</mat-error
+          >
         </mat-form-field>
       </p>
       <p>

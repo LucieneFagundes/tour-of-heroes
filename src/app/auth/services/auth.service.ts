@@ -14,14 +14,24 @@ export class AuthService {
   constructor(private router: Router) {}
 
   login(credentials: Credentials): void {
-    localStorage.setItem('token', credentials.email);
-    this.loggedIn.next(true);
+    localStorage.setItem('token', credentials.password);
+    this.updatedLoggedIn();
     this.router.navigate(['/dashboard']);
   }
 
   logout() {
     localStorage.clear();
-    this.loggedIn.next(false);
+    this.updatedLoggedIn();
     this.router.navigate(['/login']);
+  }
+
+  updatedLoggedIn(): void {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      this.loggedIn.next(true);
+    } else {
+      this.loggedIn.next(false);
+    }
   }
 }

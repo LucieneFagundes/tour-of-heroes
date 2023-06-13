@@ -19,7 +19,6 @@ import { AuthModule } from './auth/auth.module';
 
     AppRoutingModule,
     CoreModule,
-
     AuthModule,
     DashboardModule,
     HeroesModule,
