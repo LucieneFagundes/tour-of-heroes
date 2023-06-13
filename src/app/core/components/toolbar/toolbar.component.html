@@ -9,7 +9,8 @@
       [matTooltip]="menuItem.toolTipText"
       [routerLink]="[menuItem.routerLink]"
     >
-      <mat-icon>{{ menuItem.icon }} </mat-icon>
+      <fa-icon [icon]="['fas', menuItem.faIcon]" *ngIf="!!menuItem.faIcon"></fa-icon>
+      <mat-icon *ngIf="!!menuItem.matIcon" >{{ menuItem.matIcon }} </mat-icon>
     </button>
   </ng-container>
   <a

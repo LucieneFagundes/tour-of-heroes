@@ -13,6 +13,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { IconsModule } from '../icons/icons.module';
 
 const CORE_COMPONENTS = [
   ConfirmDialogComponent,
@@ -25,7 +26,7 @@ const MODULES = [FlexLayoutModule, MaterialModule];
 
 @NgModule({
   declarations: [CORE_COMPONENTS],
-  imports: [CommonModule, RouterModule, MODULES],
+  imports: [CommonModule, IconsModule, RouterModule, MODULES],
   exports: [CORE_COMPONENTS],
   providers: [
     {

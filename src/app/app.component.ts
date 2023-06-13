@@ -13,12 +13,12 @@ export class AppComponent {
   title = 'Tour of Heroes';
   menuItems: MenuItem[] = [
     {
-      icon: 'dashboard',
+      matIcon: 'dashboard',
       routerLink: '/dashboard',
       toolTipText: 'Dashboard',
     },
     {
-      icon: 'sports_martial_arts',
+      faIcon: 'mask',
       routerLink: '/heroes',
       toolTipText: 'Heroes',
     },
